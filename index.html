@@ -4,33 +4,69 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
         <title>Boattini</title>
         <style>
             #myVideo {
+            object-fit: cover;
             position: fixed;
             right: 0;
             bottom: 0;
             min-width: 100%;
-            min-height: 100%;
+            max-height: 100%;
             }
             .content {
             position: fixed;
             bottom: 0;            
             color: #f1f1f1;            
-            padding: 250px;
-            font-size: 50px;
-            
+            padding: 50px;
+            font-size: 25px;               
+            }
+
+            .btn {   
+                width: 200px;
+                height: 25px;
+                font-size: 20px;
             }
         </style>
     </head>
-    <body>  
-        <video autoplay muted loop id="myVideo">
-            <source src="assets/mivideo.mp4" type="video/mp4">
-        </video>
+    <body id="fondo">
+        
+        <div id="container">   
+            <video autoplay muted loop id="myVideo">
+                <source src="assets/video/mivideo.mp4" type="video/mp4">
+            </video>
+        </div>
         <div class="content">
-            <h1>Boattini Nicolás A.</h1>
-            <p>Paradigmas</p>            
-          </div>        
+            <h1 id="TextButton"> Boattini Nicolas</h1>
+            <p>Paradigmas</p>
+            <button id="VidButton" onclick="cambiar_video()">Cambiar</button>
+        </div>
+        <script>
+            var count = 0;
+            document.getElementById("TextButton").onclick = function() {changetext()};
+            function changetext (){
+                if(document.getElementById("TextButton").innerHTML == "Boattini Nicolas"){
+                    document.getElementById("TextButton").innerHTML = "Nicolas Boattini";    
+                } else {
+                    document.getElementById("TextButton").innerHTML = "Boattini Nicolas";
+                }                 
+            }     
+            
+            function cambiar_video() {
+                var video = document.getElementById('myVideo')
+                video.pause();
+                if(count % 2 == 0){
+                    video.src = './assets/video/mivideo2.mp4'
+                }else{
+                    video.src = './assets/video/mivideo.mp4'
+                }
+                count++;
+                video.load();
+                video.play();
+            };
+        </script>
+              
 
         
 

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <h1>Encabezado</h1>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-3">
+                Contenido Izquierda
+            </div>
+        
+        
+            <div id="medio" class="col-8">      
+                Contenido del medio          
+                <div class="row">
+                    <input class="col-2" id="numinput" type="text" placeholder="Numero">
+                    <button class="btn btn-primary col-6" id="generador">Generar</button>
+                </div>
+                <div class="row" id="botones"></div>
+                
+            </div>            
+        
+        
+            <div class="col-1">
+                Derecha
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2>Pie</h2>
+            </div>            
+        </div>
+    </div>  
+    <script src="assets/scripts/generator.js"></script>
+    <script>
+        let boton = document.getElementById("generador");
+        boton.addEventListener("click", () => {
+            let botonnum = document.getElementById("numinput").value;
+            app.ucp.generar(botonnum);
+
+        });
+    </script>
+</body>
+</html>
